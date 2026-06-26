@@ -1,26 +1,29 @@
-import{ View, Text } from 'react-native';
-// import HeaderVacío from '../HeaderVacío';
-// import Footer from '../Footer';
-import FormLogIn from './FormLogIn';
+import React from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
+import HeaderVacio from '@/components/HeaderVacio'
+import FormLogIn from '@/components/LogIn/FormLogIn'
 
 function LogIn() {
+  return (
+    <View>
 
-    return(
+        <HeaderVacio />
 
         <View>
-{/*             
-            <HeaderVacío/> */}
-            
-            <View>
-                <Text>Inicio de Sesión</Text>
-                <FormLogIn/>
-            </View>
-{/* 
-            <Footer/> */}
-        
+        <Text>Inicio de Sesión</Text>
+        <FormLogIn />
         </View>
+        <Text>¿No tienes una cuenta?</Text>
 
-    );
+        <TouchableOpacity
+            onPress={() => navigation.navigate('registro' as never)}
+            accessibilityLabel="Registrate"
+        >
+            <Text>Registrate</Text>
+        </TouchableOpacity>
+    
+    </View>
+  )
 }
 
-export default LogIn;
+export default LogIn
